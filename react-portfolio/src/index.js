@@ -2,7 +2,7 @@ import React from 'react'; // entry point to the React Library
 import ReactDOM from 'react-dom'; // provides acces to DOM-specific methods
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css'
+//import './index.css'
 
 
 // takes React components and renders them to the DOM
