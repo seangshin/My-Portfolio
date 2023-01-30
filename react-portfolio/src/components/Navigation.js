@@ -1,32 +1,53 @@
-// import `useState` with React so that we can take advantage of the hook
-import React, { useState } from 'react';
+import React from 'react';
 
-function Nav() {
-  // To set a state variable using `useState`, we give our variable a name of `greeting` and a function to update it.
-  // We also provide an initial value
-  //set a state variable using 'useState' and an update function
-  const [active, setActive] = useState('');
-
+// Here we are using object destructuring assignment to pluck off our variables from the props object
+// We assign them to their own variable names
+function Navigation({ currentPage, handlePageChange }) {
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-primary fixed-top' id='sideNav'>
-      <a className='navbar-brand' href='#page-top'>
-        <span className='d-block d-lg-none'>Sean Shin</span>
-        <span className='d-none d-lg-block'><img className='img-fluid img-profile rounded-circle mx-auto mb-2'
-          src='profile.JPG' alt='Profile Picture' /></span>
-      </a>
-
-      <div className='collapse navbar-collapse' id='navbarResponsive'>
-        <ul className='navbar-nav'>
-          <li className='nav-item'><a className='nav-link' href='#about'>About</a></li>
-          <li className='nav-item'><a className='nav-link' href='#experience'>Experience</a></li>
-          <li className='nav-item'><a className='nav-link' href='#education'>Education</a></li>
-          <li className='nav-item'><a className='nav-link' href='#skills'>Skills</a></li>
-          <li className='nav-item'><a className='nav-link' href='#interests'>Interests</a></li>
-          <li className='nav-item'><a className='nav-link' href='#projects'>Projects</a></li>
-        </ul>
-      </div>
-    </nav>
+    <ul className="nav nav-tabs">
+      <li className="nav-item">
+        <a
+          href="#about"
+          onClick={() => handlePageChange('About')}
+          // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
+        >
+          About
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          href="#porfolio"
+          onClick={() => handlePageChange('Portfolio')}
+          // This is a conditional (ternary) operator that checks to see if the current page is "Home"
+          // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
+          className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
+        >
+          Portfolio
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          href="#contact"
+          onClick={() => handlePageChange('Contact')}
+          // Check to see if the currentPage is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
+        >
+          Contact
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          href="#resume"
+          onClick={() => handlePageChange('Resume')}
+          // Check to see if the currentPage is `Resume`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
+        >
+          Resume
+        </a>
+      </li>
+    </ul>
   );
 }
 
-export default Nav;
+export default Navigation;
