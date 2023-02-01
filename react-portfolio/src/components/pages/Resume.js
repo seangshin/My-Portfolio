@@ -47,6 +47,10 @@ function Resume() {
             <figcaption>Sequelize</figcaption>
           </figure>
           <figure className="list-inline-item">
+            <li><iconify-icon icon="vscode-icons:file-type-graphql" alt="graphql" width="40"></iconify-icon></li>
+            <figcaption>GraphQL</figcaption>
+          </figure>
+          <figure className="list-inline-item">
             <li><iconify-icon icon="logos:webpack" alt="webpack" width="40"></iconify-icon></li>
             <figcaption>Webpack</figcaption>
           </figure>
