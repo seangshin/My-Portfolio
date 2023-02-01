@@ -6,7 +6,7 @@ import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 
 function Header() {
-  const [currentPage, setCurrentPage] = useState('Home');
+  const [currentPage, setCurrentPage] = useState('About');
 
   // This method is checking to see what the value of `currentPage` is. Depending on the value of currentPage, we return the corresponding component to render.
   const renderPage = () => {
@@ -29,7 +29,7 @@ function Header() {
       {/* We are passing the currentPage from state and the function to update it */}
       <Navigation currentPage={currentPage} handlePageChange={handlePageChange} />
       {/* Here we are calling the renderPage method which will return a component  */}
-      {renderPage()}
+      <div className="container-fluid p-5">{renderPage()}</div>
     </div>
   );
 }
