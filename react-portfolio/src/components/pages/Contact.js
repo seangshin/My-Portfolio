@@ -1,28 +1,42 @@
 import React, { useState } from 'react';
+// Here we import a helper function that will check if the email is valid
+import { validateEmail } from '../../utils/helpers'; // import helper function to check if email is valid
 
 function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [error, setError] = useState({ name: false, email: false, message: false });
+  const [error, setError] = useState('');
+  const [blurError, setBlurError] = useState({name: '', email: '', message: ''});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let hasError = false;
-    if (!name) {
-      setError({ ...error, name: true });
-      hasError = true;
+    let errorMessage = '';
+    if (!name ) {
+      errorMessage = errorMessage + 'A name is required. ';
     }
-    if (!email) {
-      setError({ ...error, email: true });
-      hasError = true;
+    if (!email ) {
+      errorMessage = errorMessage + 'An email is required. ';
+    }
+    if (!validateEmail(email) ) {
+      errorMessage = errorMessage + 'Email is invalid, a valid email is required. ';
     }
     if (!message) {
-      setError({ ...error, message: true });
-      hasError = true;
+      errorMessage = errorMessage + 'A message is required. ';
     }
-    if (!hasError) {
+    if (errorMessage) {
+      setError(errorMessage);
+    } else {
       // submit the form
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    if(!value) {
+      setBlurError({ ...blurError, [name]: 'This field is required' });
+    } else {
+      setBlurError({ ...blurError, [name]: ''});
     }
   };
 
@@ -36,39 +50,59 @@ function Contact() {
               <label htmlFor="name">Name</label>
               <input 
               type="text" 
-              id="name" 
-              className={`form-control ${error.name ? 'is-invalid' : ''}`} 
+              name="name" 
+              className="form-control"
               value={name}
+              onBlur={handleBlur}
               onChange={(e) => setName(e.target.value)}
               />
-              {error.name && <div className="invalid-feedback">This field is required</div>}
+              {blurError.name && (
+                <div>
+                <p className="error-text">{blurError.name}</p>
+              </div>
+              )}
             </div>
 
             <div className="form-outline mb-4">
               <label htmlFor="email">Email</label>
               <input 
               type="text" 
-              id="email" 
-              className={`form-control ${error.email ? 'is-invalid' : ''}`} 
+              name="email" 
+              className="form-control"
               value={email}
+              onBlur={handleBlur}
               onChange={(e) => setEmail(e.target.value)}
               />
-              {error.email && <div className="invalid-feedback">This field is required</div>}
+              {blurError.email && (
+                <div>
+                <p className="error-text">{blurError.email}</p>
+              </div>
+              )}
             </div>
 
             <div className="form-outline mb-4">
               <label htmlFor="message">Message</label>
               <input 
               type="textarea" 
-              id="message" 
-              className={`form-control ${error.message ? 'is-invalid' : ''}`} 
+              name="message" 
+              className="form-control"
               value={message}
+              onBlur={handleBlur}
               onChange={(e) => setMessage(e.target.value)}
               />
-              {error.message && <div className="invalid-feedback">This field is required</div>}
+              {blurError.message && (
+                <div>
+                <p className="error-text">{blurError.message}</p>
+              </div>
+              )}
             </div>
 
             <button type="submit" className="btn btn-primary btn-block mb-4">Submit</button>
+            {error && (
+              <div>
+              <p className="error-text">{error}</p>
+            </div>
+            )}
           </form>
         </div>
       </div>
