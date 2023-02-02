@@ -4,7 +4,7 @@ import React from 'react';
 // We assign them to their own variable names
 function Footer() {
  return (
-  <footer className="bg-light text-center fixed-bottom">
+  <footer className="text-center mt-auto">
     <div className="container p-1">
       <section className="mb-4">
         <a className="btn btn-outline-dark btn-floating m-1" href="https://shin.seang@gmail.com" role="button">
