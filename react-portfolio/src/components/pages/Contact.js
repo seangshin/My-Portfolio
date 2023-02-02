@@ -34,7 +34,7 @@ function Contact() {
   const handleBlur = (e) => {
     const { name, value } = e.target;
     if(!value) {
-      setBlurError({ ...blurError, [name]: 'This field is required' });
+      setBlurError({ ...blurError, [name]: 'This field is required.' });
     } else {
       setBlurError({ ...blurError, [name]: ''});
     }
@@ -58,7 +58,7 @@ function Contact() {
               />
               {blurError.name && (
                 <div>
-                <p className="error-text">{blurError.name}</p>
+                <p className="text-danger">{blurError.name}</p>
               </div>
               )}
             </div>
@@ -75,7 +75,7 @@ function Contact() {
               />
               {blurError.email && (
                 <div>
-                <p className="error-text">{blurError.email}</p>
+                <p className="text-danger">{blurError.email}</p>
               </div>
               )}
             </div>
@@ -92,7 +92,7 @@ function Contact() {
               />
               {blurError.message && (
                 <div>
-                <p className="error-text">{blurError.message}</p>
+                <p className="text-danger">{blurError.message}</p>
               </div>
               )}
             </div>
@@ -100,7 +100,7 @@ function Contact() {
             <button type="submit" className="btn btn-primary btn-block mb-4">Submit</button>
             {error && (
               <div>
-              <p className="error-text">{error}</p>
+              <p className="text-danger">{error}</p>
             </div>
             )}
           </form>
