@@ -5,7 +5,7 @@ function About() {
     <div>
       <h3>About Me</h3>
       <div className="text-center">
-        <img className="rounded-circle mt-5" width="200" height="200" src="./assets/profile.JPG" alt="profile" />
+        <img src="./assets/profile.JPG" className="rounded-circle mt-5" width="200" height="200" alt="profile" />
       </div>
       
       <div className="lead text-center font-weight-bold subheading mt-5 mb-5">
