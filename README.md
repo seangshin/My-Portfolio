@@ -1,10 +1,9 @@
 # My-Portfolio
-A portfolio using React.js technologies.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
  ![](/screenshot.JPG)
 
-Link to deployed application: https://afternoon-fortress-07309.herokuapp.com/
+Link to deployed application: https://seangshin.github.io/My-Portfolio
 
 ## Description
 The motivation of this project is to build a portfolio web application using React.js. The application features reusable UI components and manage the state of their applications efficiently. React works by updating the user interface whenever the underlying data changes, making it ideal for dynamic, responsive applications. With React, developers can break down complex applications into smaller, manageable components, making it easier to build, test, and maintain applications. Additionally, React is designed to work seamlessly with other technologies, making it an excellent choice for building modern, full-stack applications.
