@@ -5,7 +5,7 @@ import React from 'react';
 function Navigation({ currentPage, handlePageChange }) {
  return (
     <nav className="navbar navbar-expand-lg navbar-dark custom-bg-color p-3" style={{ backgroundColor: "#335A7B", fontFamily: "Georgia", fontSize: "20px" }}>
-      <a className="navbar-brand" style={{ fontFamily: "Georgia", fontSize: "30px" }}>Sean Shin</a>
+      <a className="navbar-brand" href="#about" onClick={() => handlePageChange('About')} style={{ fontFamily: "Georgia", fontSize: "30px" }}>Sean Shin</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
