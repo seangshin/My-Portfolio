@@ -4,6 +4,13 @@ import Project from '../Project'
 function Portfolio() {
   const projects = [
     {
+      title: "Destination Unknown",
+      description: "A travel app built with MERN stack technologies to allow users create and share their travel plans.",
+      image: "./assets/travel.JPG",
+      viewLink: "https://morning-earth-32879.herokuapp.com/",
+      githubLink: "https://github.com/seangshin/Destination-Unknown"
+    },
+    {
       title: "Marketplace App",
       description: "An e-commerce site built with a content management system to allow users to post items for sale and bid on items posted by other users.",
       image: "./assets/marketplace.JPG",
